@@ -1,0 +1,102 @@
+.appWrapper{
+    display: block;
+    width: 100%;
+}
+
+/* Layout Sidebar */
+.collapsableSidebar{
+    height: 100%;
+    background-color: lightgray;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: .5s;
+}
+
+.collapsableSidebar ul{
+    width: 100%;
+    padding: 0;
+    margin-top: 75px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.collapsableSidebar ul li {
+    padding: 5px 0px 5px 10px;
+}
+
+.collapsableSidebar ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+}
+.collapsableSidebar ul li a:hover {
+    color: #FFFFF1;
+    text-decoration: underline;
+}
+
+.sidebarWidth{
+    width: 10vw;
+}
+
+.sidebarCloseBtn{
+    background-color: #1e847f;
+    cursor: pointer;
+    height: 40px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    transition: box-shadow 0.5s;
+    position: absolute;
+    top: 25px;
+    right: 15px;
+}
+.sidebarCloseBtn:hover{
+    box-shadow: gray 0 0.5em 1em;
+}
+
+/* Main Body Section */
+.mainBody{
+    display: block;
+    transition: margin-left .5s;
+    max-height: 100vh;
+    height: 100vh;
+    padding: 8px;
+    background-color: gray;
+}
+.mainBodyMarginLeft{
+    margin-left: 10vw;
+}
+
+.openHamburger{
+    background-color: #1e847f;
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+    height: 40px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    transition: box-shadow 0.5s, visibility 0.2s;
+}
+.openHamburger:hover {
+    box-shadow: gray 0 0.5em 1em;
+}
+div.mainBodyMarginLeft .openHamburger {
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 560px) {
+    .sidebarWidth{
+        width: 30vw;
+    }
+    .mainBodyMarginLeft{
+        margin-left: 30vw;
+    }
+}

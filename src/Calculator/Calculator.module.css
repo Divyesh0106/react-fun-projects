@@ -1,0 +1,109 @@
+.calculatorApp{
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.calculatorHeader{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightsteelblue;
+    font-size: 32px;
+    font-weight: 700;
+}
+.calculatorWrapper{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+}
+.container {
+    width: 400px;
+    text-align: center;
+    border: 5px solid #1D1E22;
+}
+
+.createdBy {
+    width: 400px;
+    margin: 30px auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #1D1E22;
+}
+.createdBy a{
+    text-decoration: none;
+    font-size: 24px;
+    text-decoration: underline;
+    color: #666666;
+}
+
+.alignRight {
+    text-align: right;
+    min-height: 5px;
+    font-size: 24px;
+}
+
+.alignRight.small {
+    font-size: 14px;
+}
+
+.button {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    outline: 1px solid #1D1E22;
+    color: white;
+    background: #4d4d4d;
+}
+
+.button:hover {
+    outline: 2px solid grey;
+    color: #1D1E22;
+    z-index: 1;
+}
+
+.displayOuter {
+    background: #1D1E22;
+    height: 80px;
+}
+
+.expression {
+    color: yellow;
+}
+
+.display {
+    color: white;
+}
+
+.clear {
+    background: #AC3939;
+}
+
+.add,
+.subtract,
+.multiply,
+.divide,
+.equalsCell {
+    background: #666666;
+}
+
+.equalsCell:hover {
+    outline: 2px solid grey;
+    color: #1D1E22;
+    z-index: 1;
+}
+
+.equals,
+.equals:hover {
+    background: #666666;
+    border: none;
+    outline: none;
+}

@@ -1,0 +1,148 @@
+.app {
+    width: 100%;
+    height: 100%;
+}
+
+.appHeader {
+    width: 100%;
+    min-height: 20%;
+    display: flex;
+    align-items: center;
+    justify-items: left;
+    justify-content: center;
+    background-color: #E0E0E2;
+    color: #50206C;
+}
+
+.appLogo {
+    height: 15vh;
+    margin-right: 20px;
+}
+
+.playground {
+    display: flex;
+    background-color: #50206C;
+    min-height: 80%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.currentPlayer {
+    text-align: center;
+    color: #E0E0E2;
+}
+
+.currentPlayer span {
+    font-size: 32px;
+}
+
+.row {
+    display: block;
+    width: 100%;
+    min-width: 250px;
+}
+
+.square span {
+    visibility: hidden;
+}
+
+.square {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    margin: 4px;
+    background-color: #EEE0E2;
+    font-size: 24px;
+    font-weight: bolder;
+    color: #50206C;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.restart {
+    margin-top: 20px;
+    width: 40%;
+    height: 40px;
+    border: none;
+    background-color: #E0E0E2;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modes span {
+    font-size: 20px;
+    color: #EEE0E2;
+    font-weight: bolder;
+}
+
+.switch {
+    margin: 0px 8px;
+}
+
+.toggleSwitch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggleSwitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}

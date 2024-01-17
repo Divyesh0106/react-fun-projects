@@ -1,0 +1,55 @@
+import React, { lazy, Suspense } from 'react';
+import './App.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+const Layout  = lazy(() => import('./Layout/layout'));
+const MainPage = lazy(() =>import('./Layout/mainPage'));
+const TicTacToe = lazy(() => import('./TicTacToe/Tictactoe'));
+const Clock25 = lazy(() => import('./Clock25/Clock25'));
+const Calculator = lazy(() => import('./Calculator/Calculator'));
+const DrumMachine = lazy(() => import('./Drummachine/Drummachine'));
+const MarkdownPreviwer = lazy(() => import('./MarkdownPreviwer/MarkdownPreviwer'));
+
+const router = createBrowserRouter([
+  {
+    id: "root",
+    path: '/',
+    Component: Layout,
+    children: [
+      {
+        index: true,
+        Component: MainPage
+      },
+      {
+        path: 'tic-tac-toe',
+        Component: TicTacToe
+      },
+      {
+        path: 'clock-25',
+        Component: Clock25
+      },
+      {
+        path: 'calculator',
+        Component: Calculator
+      },
+      {
+        path: 'drum-machine',
+        Component: DrumMachine
+      },
+      {
+        path: 'markdown-previewer',
+        Component: MarkdownPreviwer
+      }
+    ]
+  },
+]);
+
+function App() {
+  return (
+    <Suspense fallback={<div style={{textAlign: 'center', fontSize: '28px'}}>...Loading</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
+}
+
+export default App;
