@@ -2,10 +2,19 @@ import React, { lazy, Suspense } from 'react';
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
+function delay(Component:any):any{
+  return new Promise( resolve =>{
+    setTimeout(()=>{
+      resolve(Component);
+    },5000);
+  })
+}
+
+const Loader = lazy(()=> import('./Layout/loader'));
 const Layout  = lazy(() => import('./Layout/layout'));
 const MainPage = lazy(() =>import('./Layout/mainPage'));
 const TicTacToe = lazy(() => import('./TicTacToe/Tictactoe'));
-const Clock25 = lazy(() => import('./Clock25/Clock25'));
+const Clock25 = lazy(() => delay(import('./Clock25/Clock25')));
 const Calculator = lazy(() => import('./Calculator/Calculator'));
 const DrumMachine = lazy(() => import('./Drummachine/Drummachine'));
 const MarkdownPreviwer = lazy(() => import('./MarkdownPreviwer/MarkdownPreviwer'));
@@ -46,7 +55,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <Suspense fallback={<div style={{textAlign: 'center', fontSize: '28px'}}>...Loading</div>}>
+    <Suspense fallback={<Loader/>}>
       <RouterProvider router={router} />
     </Suspense>
   );
