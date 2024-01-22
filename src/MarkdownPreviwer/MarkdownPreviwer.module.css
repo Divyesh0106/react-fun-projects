@@ -32,21 +32,17 @@
 
 .toolbar i {
     margin: 0px 5px;
-}
-
-.toolbar .fa-minimize,
-.toolbar .fa-maximize {
     margin-left: auto;
     cursor: pointer;
 }
 
-.toolbar .fa-minimize:hover,
-.toolbar .fa-maximize:hover {
+.toolbar i:hover {
     color: #57e2b1;
 }
 
 .editorWrapper {
     max-width: 600px;
+    width: 40vw;
     padding: 0;
     margin: 0;
     background-color: #C0D8D8;
@@ -70,11 +66,12 @@
 
 .previewWrapper {
     max-width: 800px;
+    width: 50vw;
     padding: 0;
     margin: 0;
     background-color: #C0D8D8;
-    margin: 10px auto;
-    overflow-y: auto;
+    /* margin: auto; */
+    margin: 0 10px;
 }
 
 .preview {
@@ -82,6 +79,8 @@
     min-height: 200px;
     padding: 10px;
     box-shadow: 1px 1px 10px 2px #3a5f5f;
+    height: 70vh;
+    overflow-y: auto;
 }
 
 .preview img {
